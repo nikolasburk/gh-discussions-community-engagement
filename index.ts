@@ -3,7 +3,7 @@ import { gql, GraphQLClient } from "graphql-request";
 const ROOT_ENDPOINT = "https://api.github.com/graphql";
 const AUTH_TOKEN = "";
 
-const TEAM_MEMBERS = ["ludralph", "nurul3101"];
+const TEAM_MEMBERS = ["ludralph", "nurul3101", "nikolasburk", "janpio"];
 
 const MAX_DISCUSSION = 49;
 const MAX_COMMENTS = 100;
