@@ -1,7 +1,10 @@
 import { gql, GraphQLClient } from "graphql-request";
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: __dirname + "/.env" });
 
 const ROOT_ENDPOINT = "https://api.github.com/graphql";
-const AUTH_TOKEN = "";
+const AUTH_TOKEN = process.env.AUTH_TOKEN;
 
 const TEAM_MEMBERS = ["ludralph", "nurul3101", "nikolasburk", "janpio"];
 
@@ -70,7 +73,7 @@ type Comment = {
   replies: any;
 };
 
-// A reply is a response to a comment (essentialy a _thread_)
+// A reply is a response to a comment (essentially a _thread_)
 type Reply = {
   createdAt: string;
   author: Author;
@@ -154,11 +157,11 @@ async function calculateOptionAEngagementRate() {
   const discussions = setNumberOfEngagedCommunityMembersPerDiscussion(discussionData);
 
   const allEngagementCounts = discussions
-  .map((discussion) => {
-    return discussion.numberOfEngagedCommunityMembers;
-  })
-  .reduce((prev, current) => prev + (current > 0 ? 1 : 0));
-  
+    .map((discussion) => {
+      return discussion.numberOfEngagedCommunityMembers;
+    })
+    .reduce((prev, current) => prev + (current > 0 ? 1 : 0));
+
   const totalDiscussionCount = discussions.length;
   console.log(`Total Discussions: ${totalDiscussionCount}`);
   console.log(`Total Community Engagement (A): ${allEngagementCounts}`);
@@ -177,7 +180,6 @@ async function calculateOptionBEngagementRate() {
       return discussion.numberOfEngagedCommunityMembers;
     })
     .reduce((prev, current) => prev + current);
-
 
   const totalDiscussionCount = discussions.length;
   console.log(`Total Discussions: ${totalDiscussionCount}`);
