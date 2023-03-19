@@ -1,5 +1,7 @@
 # Community Engagement Rate in GitHub Discussions
 
+> **Note**: This is a proof-of-concept that calculates the rate based in incoming discussions. At the moment, it statically fetches the last `MAX_DISCUSSION` discussions from the API and calculates the community engagement rate for these. There is no way yet to calculate the community engagement rate for all Discussions since a given date.
+
 This script calculates the community engagement rate for GitHub Discussions according to two different approaches.
 
 ## Option A: Count at most one community member per Discussion
