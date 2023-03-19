@@ -1,6 +1,6 @@
 # Community Engagement Rate in GitHub Discussions
 
-> **Note**: This is a proof-of-concept that calculates the rate based in incoming discussions. At the moment, it statically fetches the last `MAX_DISCUSSION` discussions from the API and calculates the community engagement rate for these. There is no way yet to calculate the community engagement rate for all Discussions since a given date.
+> **Note**: This is a proof-of-concept that calculates the community engagement rate (CER) based on a set of given discussions retrieved from the [GitHub GraphQL API](https://docs.github.com/en/graphql/overview/explorer). At the moment, it statically fetches the last `MAX_DISCUSSION` discussions from the API and calculates the community engagement rate for these. There is no way yet to calculate the CER for all Discussions since a given date.
 
 This script calculates the community engagement rate for GitHub Discussions according to two different approaches.
 
